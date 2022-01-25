@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Application.Cars": {
+      "commandName": "Project",
+      "commandLineArgs": "log"
+    }
+  }
+}

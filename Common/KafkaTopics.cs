@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace Common
+﻿namespace Common
 {
     public class KafkaTopics
     {
-        public const string CentralLogging = "system:central_logging";
-        public const string TaskExecution = "system:central_logging";
+        // allowed special characters for Kafka topic names ". _ -"
+        public const string CentralLogging = "system.central_logging";
+        public const string TaskExecution = "system.task_execution";
     }
 }
