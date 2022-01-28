@@ -25,7 +25,7 @@ namespace Service.Reporting
 
             Console.WriteLine("Identity: Reporting (Consumer)");
 
-            communicator.ConsumptionTopic(topics, "Reporting", Handler, true);
+            communicator.ConsumptionTopic(topics, "Reporting", Handler);
         }
 
         private static void Handler(ConsumeResult<Null, string> result)

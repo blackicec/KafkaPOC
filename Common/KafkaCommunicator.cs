@@ -2,7 +2,6 @@
 using Confluent.Kafka.Admin;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Common
 {
@@ -37,7 +36,7 @@ namespace Common
             }
         }
 
-        public void ConsumptionTopic(List<string> topics, string groupId, Action<ConsumeResult<Null, string>> handler, bool fromBeginning = false)
+        public void ConsumptionTopic(List<string> topics, string groupId, Action<ConsumeResult<Null, string>> handler)
         {
             using (IConsumer<Null, string> consumer =
                 new ConsumerBuilder<Null, string>(new ConsumerConfig { GroupId = groupId, BootstrapServers = Constants.BootstrapServers }).Build()) { 
