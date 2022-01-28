@@ -20,7 +20,7 @@ namespace Service.CentralLogging
 
             Console.WriteLine("Identity: Central Logging (Consumer)");
 
-            communicator.ConsumptionTopic(topics, "CentralLogger", handler, true);
+            communicator.ConsumptionTopic(topics, "CentralLogger", handler);
         }
     }
 }

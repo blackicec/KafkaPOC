@@ -23,7 +23,7 @@ namespace Service.TaskExecution
 
             Console.WriteLine("Identity: Task Execution Service (Consumer)");
 
-            communicator.ConsumptionTopic(topics, "TaskService", handler, true);
+            communicator.ConsumptionTopic(topics, "TaskService", handler);
         }
     }
 }
