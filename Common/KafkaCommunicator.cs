@@ -40,17 +40,12 @@ namespace Common
         public void ConsumptionTopic(List<string> topics, string groupId, Action<ConsumeResult<Null, string>> handler, bool fromBeginning = false)
         {
             using (IConsumer<Null, string> consumer =
-                new ConsumerBuilder<Null, string>(new ConsumerConfig { GroupId = groupId, BootstrapServers = Constants.BootstrapServers })
-                /*.SetPartitionsAssignedHandler((c, partitions) =>
-                {
-                    return partitions.Select(tp => new TopicPartitionOffset(tp, fromBeginning ? Offset.Beginning : Offset.End));
-
-                })*/.Build()) { 
+                new ConsumerBuilder<Null, string>(new ConsumerConfig { GroupId = groupId, BootstrapServers = Constants.BootstrapServers }).Build()) { 
             
                 consumer.Subscribe(topics);
 
                 // Listen for incoming messages and print them out
-                Console.WriteLine(groupId + ": Beginning Comsuption");
+                Console.WriteLine(groupId + ": Beginning Consumption");
                 while (true)
                 {
                     ConsumeResult<Null, string> result = consumer.Consume(5000);
