@@ -1,7 +1,6 @@
 ﻿using Common;
 using Confluent.Kafka;
 using System;
-using System.Collections.Generic;
 using System.Text.Json;
 
 namespace Application.Cars
